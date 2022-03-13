@@ -15,5 +15,5 @@ var myNum = random.Next();
 
 With:
 ```csharp
-var myNum = ThreadSafeRandomizer.Instance.Next();
+var myNum = ThreadSafeRandom.Instance.Next();
 ```

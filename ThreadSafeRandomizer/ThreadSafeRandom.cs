@@ -6,7 +6,7 @@ namespace ThreadSafeRandomizer
     /// <summary>
     /// An efficient thread-safe randomizer.
     /// </summary>
-    public class ThreadSafeRandomizer
+    public class ThreadSafeRandom
     {
         private static readonly Random _global = new Random();
         private static readonly ThreadLocal<Random> _local = new ThreadLocal<Random>(() =>

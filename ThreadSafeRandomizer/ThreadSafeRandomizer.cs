@@ -3,6 +3,9 @@ using System.Threading;
 
 namespace ThreadSafeRandomizer
 {
+    /// <summary>
+    /// An efficient thread-safe randomizer.
+    /// </summary>
     public class ThreadSafeRandomizer
     {
         private static readonly Random _global = new Random();
@@ -16,6 +19,9 @@ namespace ThreadSafeRandomizer
             return new Random(seed);
         });
 
+        /// <summary>
+        /// Thread-safe <see cref="Random"/> instance.
+        /// </summary>
         public static Random Instance => _local.Value;
     }
 }

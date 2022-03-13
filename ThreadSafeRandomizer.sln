@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadSafeRandomizer", "ThreadSafeRandomizer\ThreadSafeRandomizer.csproj", "{3BB254B4-CC11-4C29-8836-F59C752A9362}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BB254B4-CC11-4C29-8836-F59C752A9362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB254B4-CC11-4C29-8836-F59C752A9362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB254B4-CC11-4C29-8836-F59C752A9362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB254B4-CC11-4C29-8836-F59C752A9362}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {71524637-2844-4459-BF5F-44FC9EB23F3E}
+	EndGlobalSection
+EndGlobal

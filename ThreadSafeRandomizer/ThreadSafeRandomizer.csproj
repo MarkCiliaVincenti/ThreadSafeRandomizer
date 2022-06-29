@@ -33,11 +33,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="ThreadSafeRandomizer/ThreadSafeRandomizer.csproj" />
-		<TrimmerRootAssembly Include="ThreadSafeRandomizer" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<None Include="..\LICENSE">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>

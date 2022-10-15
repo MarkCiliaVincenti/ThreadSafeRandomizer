@@ -8,6 +8,14 @@ namespace ThreadSafeRandomizer
     /// </summary>
     public static class ThreadSafeRandom
     {
+        /// <summary>
+        /// Thread-safe <see cref="Random"/> instance.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public static Random Instance => Random.Shared;
+#else
+        public static Random Instance => _local.Value;
+
         private static readonly Random _global = new Random();
         private static readonly ThreadLocal<Random> _local = new ThreadLocal<Random>(() =>
         {
@@ -18,10 +26,6 @@ namespace ThreadSafeRandomizer
             }
             return new Random(seed);
         });
-
-        /// <summary>
-        /// Thread-safe <see cref="Random"/> instance.
-        /// </summary>
-        public static Random Instance => _local.Value;
+#endif
     }
 }

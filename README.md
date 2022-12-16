@@ -1,5 +1,5 @@
 # ![ThreadSafeRandomizer](https://raw.githubusercontent.com/MarkCiliaVincenti/ThreadSafeRandomizer/master/logo32.png) ThreadSafeRandomizer
- [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/MarkCiliaVincenti/ThreadSafeRandomizer/.NET?logo=github&style=for-the-badge)](https://actions-badge.atrox.dev/MarkCiliaVincenti/ThreadSafeRandomizer/goto?ref=master) [![Nuget](https://img.shields.io/nuget/v/ThreadSafeRandomizer?label=ThreadSafeRandomizer&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/ThreadSafeRandomizer) [![Nuget](https://img.shields.io/nuget/dt/ThreadSafeRandomizer?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/ThreadSafeRandomizer)
+ [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/MarkCiliaVincenti/ThreadSafeRandomizer/dotnet.yml?branch=master&logo=github&style=for-the-badge)](https://actions-badge.atrox.dev/MarkCiliaVincenti/ThreadSafeRandomizer/goto?ref=master) [![Nuget](https://img.shields.io/nuget/v/ThreadSafeRandomizer?label=ThreadSafeRandomizer&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/ThreadSafeRandomizer) [![Nuget](https://img.shields.io/nuget/dt/ThreadSafeRandomizer?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/ThreadSafeRandomizer)
 
 An efficient thread-safe randomizer.
 

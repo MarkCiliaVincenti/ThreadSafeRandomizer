@@ -1,16 +1,15 @@
 ﻿// Copyright (c) All contributors. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using Microsoft.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using Microsoft.CodeAnalysis;
 
 namespace ThreadSafeRandomizer.SourceGenerator;
 
 /// <summary>
-/// Source generator for Backport.System.Threading.Lock.
+/// Source generator for ThreadSafeRandomizer.
 /// </summary>
 [Generator]
 internal sealed class Generator : IIncrementalGenerator

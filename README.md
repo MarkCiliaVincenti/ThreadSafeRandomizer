@@ -22,13 +22,13 @@ var myNum = ThreadSafeRandom.Instance.Next();
 The usage as a source generator is almost identical to using it as a dependency. The only difference is changing:
 
 ```xml
-<PackageReference Include="ThreadSafeRandomizer" Version="2.0.2" />  
+<PackageReference Include="ThreadSafeRandomizer" Version="2.0.3" />  
 ```
 
 to:
 
 ```xml
-<PackageReference Include="ThreadSafeRandomizer" Version="2.0.2">
+<PackageReference Include="ThreadSafeRandomizer" Version="2.0.3">
   <PrivateAssets>all</PrivateAssets>
   <IncludeAssets>analyzers</IncludeAssets>
 </PackageReference>

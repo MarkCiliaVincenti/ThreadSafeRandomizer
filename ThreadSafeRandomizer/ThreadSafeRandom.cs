@@ -13,7 +13,12 @@ namespace ThreadSafeRandomizer;
 /// <summary>
 /// An efficient thread-safe randomizer.
 /// </summary>
-public static class ThreadSafeRandom
+#if SOURCE_GENERATOR
+internal
+#else
+public
+#endif
+static class ThreadSafeRandom
 {
     /// <summary>
     /// Thread-safe <see cref="Random"/> instance.

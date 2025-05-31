@@ -9,19 +9,28 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Install .NET
-      shell: pwsh
-      run: |
-          $ProgressPreference = 'SilentlyContinue'
-          Invoke-WebRequest https://dot.net/v1/dotnet-install.ps1 -OutFile dotnet-install.ps1
-          .\dotnet-install.ps1 -Version 7.0.100-rc.2.22477.23 -InstallDir .
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: |
+            8.0.x
+            9.0.x
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
     - name: Build
-      shell: pwsh
-      run: |
-          & .\dotnet build ThreadSafeRandomizer/ThreadSafeRandomizer.csproj -bl:binlog.binlog      
+      run: dotnet build --no-restore --configuration Release
+      
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-restore --configuration Release --logger:"console;verbosity=normal" --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+
+    - name: Code Coverage
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}

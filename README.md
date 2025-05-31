@@ -1,7 +1,11 @@
-# ![ThreadSafeRandomizer](https://raw.githubusercontent.com/MarkCiliaVincenti/ThreadSafeRandomizer/master/logo32.png) ThreadSafeRandomizer
- [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/MarkCiliaVincenti/ThreadSafeRandomizer/dotnet.yml?branch=master&logo=github&style=for-the-badge)](https://actions-badge.atrox.dev/MarkCiliaVincenti/ThreadSafeRandomizer/goto?ref=master) [![Nuget](https://img.shields.io/nuget/v/ThreadSafeRandomizer?label=ThreadSafeRandomizer&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/ThreadSafeRandomizer) [![Nuget](https://img.shields.io/nuget/dt/ThreadSafeRandomizer?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/ThreadSafeRandomizer)
+# ![ThreadSafeRandomizer](https://raw.githubusercontent.com/MarkCiliaVincenti/Backport.System.Threading.Lock/master/logo32.png)&nbsp;Backport.System.Threading.Lock
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/MarkCiliaVincenti/Backport.System.Threading.Lock/dotnet.yml?branch=master&logo=github&style=flat)](https://actions-badge.atrox.dev/MarkCiliaVincenti/Backport.System.Threading.Lock/goto?ref=master) [![NuGet](https://img.shields.io/nuget/v/Backport.System.Threading.Lock?label=NuGet&logo=nuget&style=flat)](https://www.nuget.org/packages/Backport.System.Threading.Lock) [![NuGet](https://img.shields.io/nuget/dt/Backport.System.Threading.Lock?logo=nuget&style=flat)](https://www.nuget.org/packages/Backport.System.Threading.Lock) [![Codacy Grade](https://img.shields.io/codacy/grade/46617e1e645948ce9799026c84b7f1e1?style=flat)](https://app.codacy.com/gh/MarkCiliaVincenti/Backport.System.Threading.Lock/dashboard) [![Codecov](https://img.shields.io/codecov/c/github/MarkCiliaVincenti/Backport.System.Threading.Lock?label=coverage&logo=codecov&style=flat)](https://app.codecov.io/gh/MarkCiliaVincenti/Backport.System.Threading.Lock)
 
-An efficient thread-safe randomizer.
+
+# ![ThreadSafeRandomizer](https://raw.githubusercontent.com/MarkCiliaVincenti/ThreadSafeRandomizer/master/logo32.png)&nbsp;ThreadSafeRandomizer
+ [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/MarkCiliaVincenti/ThreadSafeRandomizer/dotnet.yml?branch=master&logo=github&style=flat)](https://actions-badge.atrox.dev/MarkCiliaVincenti/ThreadSafeRandomizer/goto?ref=master) [![Nuget](https://img.shields.io/nuget/v/ThreadSafeRandomizer?label=ThreadSafeRandomizer&logo=nuget&style=flat)](https://www.nuget.org/packages/ThreadSafeRandomizer) [![Nuget](https://img.shields.io/nuget/dt/ThreadSafeRandomizer?logo=nuget&style=flat)](https://www.nuget.org/packages/ThreadSafeRandomizer) [![Codacy Grade](https://img.shields.io/codacy/grade/0484dc914e334c84836d22e9f884225e?style=flat)](https://app.codacy.com/gh/MarkCiliaVincenti/ThreadSafeRandomizer/dashboard) [![Codecov](https://img.shields.io/codecov/c/github/MarkCiliaVincenti/ThreadSafeRandomizer?label=coverage&logo=codecov&style=flat)](https://app.codecov.io/gh/MarkCiliaVincenti/ThreadSafeRandomizer)
+
+An efficient thread-safe randomizer that can optionally be used as a source generator.
 
 ## Installation
 The recommended means is to use [NuGet](https://www.nuget.org/packages/ThreadSafeRandomizer), but you could also download the source code from [here](https://github.com/MarkCiliaVincenti/ThreadSafeRandomizer/releases).
@@ -16,4 +20,20 @@ var myNum = random.Next();
 With:
 ```csharp
 var myNum = ThreadSafeRandom.Instance.Next();
+```
+
+## Source Generator
+The usage as a source generator is almost identical to using it as a dependency. The only difference is changing:
+
+```xml
+<PackageReference Include="ThreadSafeRandomizer" Version="2.0.0" />  
+```
+
+to:
+
+```xml
+<PackageReference Include="ThreadSafeRandomizer" Version="2.0.0">
+  <PrivateAssets>all</PrivateAssets>
+  <IncludeAssets>analyzers</IncludeAssets>
+</PackageReference>
 ```

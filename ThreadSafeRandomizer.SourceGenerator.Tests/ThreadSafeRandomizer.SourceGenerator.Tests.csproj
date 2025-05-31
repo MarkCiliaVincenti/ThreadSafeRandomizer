@@ -25,10 +25,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\ThreadSafeRandomizer\ThreadSafeRandomizer.csproj" />
+		<ProjectReference Include="..\ThreadSafeRandomizer\ThreadSafeRandomizer.csproj">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>analyzers</IncludeAssets>
+		</ProjectReference>
 	</ItemGroup>
 
 	<ItemGroup>
 		<Using Include="Xunit" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="../ThreadSafeRandomizer.Tests/*.cs" />
+	</ItemGroup>
+
 </Project>

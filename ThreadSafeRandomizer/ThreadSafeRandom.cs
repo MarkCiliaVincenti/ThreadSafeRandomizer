@@ -1,5 +1,9 @@
-﻿using System;
+﻿#if NET6_0_OR_GREATER
+using System;
+#else
+using System;
 using System.Threading;
+#endif
 
 namespace ThreadSafeRandomizer;
 
@@ -16,8 +20,8 @@ public static class ThreadSafeRandom
 #else
     public static Random Instance => _local.Value;
 
-    private static readonly Random _global = new Random();
-    private static readonly ThreadLocal<Random> _local = new ThreadLocal<Random>(() =>
+    private static readonly Random _global = new();
+    private static readonly ThreadLocal<Random> _local = new(() =>
     {
         int seed;
         lock (_global)

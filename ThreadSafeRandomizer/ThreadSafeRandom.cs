@@ -1,10 +1,9 @@
 ﻿// Copyright (c) All contributors. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-#if NET6_0_OR_GREATER
 using System;
-#else
-using System;
+using System.Runtime.CompilerServices;
+#if !NET6_0_OR_GREATER
 using System.Threading;
 #endif
 
@@ -24,19 +23,21 @@ static class ThreadSafeRandom
     /// Thread-safe <see cref="Random"/> instance.
     /// </summary>
 #if NET6_0_OR_GREATER
-    public static Random Instance => Random.Shared;
-#else
-    public static Random Instance => _local.Value;
-
-    private static readonly Random _global = new();
-    private static readonly ThreadLocal<Random> _local = new(() =>
+    public static Random Instance
     {
-        int seed;
-        lock (_global)
-        {
-            seed = _global.Next();
-        }
-        return new Random(seed);
-    });
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => Random.Shared;
+    }
+#else
+    public static Random Instance
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => _random ??= new Random(Interlocked.Increment(ref _seed));
+    }
+        
+    private static int _seed = Environment.TickCount;
+
+    [ThreadStatic]
+    private static Random? _random;
 #endif
 }

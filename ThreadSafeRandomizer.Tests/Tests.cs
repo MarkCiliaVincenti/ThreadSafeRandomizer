@@ -1,4 +1,6 @@
-﻿namespace ThreadSafeRandomizer.Tests;
+﻿using Xunit;
+
+namespace ThreadSafeRandomizer.Tests;
 
 public class Tests
 {

@@ -15,8 +15,6 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="FluentAssertions" />
-		<PackageReference Include="System.Net.Http" />
-		<PackageReference Include="System.Text.RegularExpressions" />
 		<PackageReference Include="xunit.v3" />
 		<PackageReference Include="xunit.v3.mtp-v2" />
 		<PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" />
